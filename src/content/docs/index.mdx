@@ -1,40 +1,39 @@
 ---
-title: Welcome to Starlight
-description: Get started building your docs site with Starlight.
-template: splash # Remove or comment out this line to display the site sidebar on this page.
+title: PocketbaseExtended
+description: PocketBase REST client library for ESP8266 and ESP32.
+template: splash
 hero:
-  tagline: Congrats on setting up a new Starlight project!
-  image:
-    file: ../../assets/houston.webp
+  tagline: Connect your Arduino-compatible boards to PocketBase — full CRUD, auth, and structured error handling with zero heavy dependencies.
   actions:
-    - text: Example Guide
-      link: /guides/example/
+    - text: Get Started
+      link: /getting-started/introduction/
       icon: right-arrow
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
+      variant: primary
+    - text: GitHub
+      link: https://github.com/jeoooo/PocketbaseExtended
       icon: external
       variant: minimal
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
-## Next steps
-
 <CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
-	</Card>
-	<Card title="Change page layout" icon="document">
-		Delete `template: splash` in `src/content/docs/index.mdx` to display a
-		sidebar on this page.
-	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
-	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
-	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
-	</Card>
+  <Card title="Full CRUD" icon="pencil">
+    Create, read, update, and delete records across any PocketBase collection with a clean chainable API.
+  </Card>
+  <Card title="Authentication" icon="approve-check">
+    Log in with email/password. Tokens are stored and sent automatically — including token refresh for long-running devices.
+  </Card>
+  <Card title="Structured Responses" icon="information">
+    Every operation returns a `PBResponse` with `ok`, `statusCode`, `body`, and `error` — no guessing from raw strings.
+  </Card>
+  <Card title="ESP8266 & ESP32" icon="laptop">
+    Conditionally compiled for both platforms. Uses only the platform's built-in HTTP stack — no extra libraries needed.
+  </Card>
+  <Card title="Debug Logging" icon="magnifier">
+    Toggle `setDebug(true)` to stream request URLs, status codes, and response bodies to Serial during development.
+  </Card>
+  <Card title="Backward Compatible" icon="puzzle">
+    `PocketbaseArduino` alias retained so existing v0.x sketches work without changes.
+  </Card>
 </CardGrid>

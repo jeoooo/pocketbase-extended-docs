@@ -1,0 +1,96 @@
+/*
+  Arduino-flavored theme for PocketbaseExtended docs.
+  Override Starlight CSS variables with Arduino teal palette.
+
+  Arduino colors:
+    Primary teal:  #00979D
+    Dark teal:     #006265
+    Medium teal:   #62AEB2
+    Light teal:    #D9EFF0
+*/
+
+/* ── Dark mode (Starlight default) ─────────────────────────────────────────── */
+:root {
+  --sl-color-accent-low:  #003d40;
+  --sl-color-accent:      #00979D;
+  --sl-color-accent-high: #7ecfd2;
+}
+
+/* ── Light mode ─────────────────────────────────────────────────────────────── */
+:root[data-theme='light'] {
+  --sl-color-accent-low:  #d0eced;
+  --sl-color-accent:      #00797e;
+  --sl-color-accent-high: #004a4d;
+}
+
+/* ── Site title wordmark ────────────────────────────────────────────────────── */
+.site-title {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* ── Hero section — tighter, pocketbase.io style ────────────────────────────── */
+.hero {
+  padding-block: 4rem;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.hero .tagline {
+  font-size: 1.15rem;
+  opacity: 0.8;
+  max-width: 42ch;
+}
+
+/* ── Card grid ───────────────────────────────────────────────────────────────── */
+.card {
+  border-radius: 0.75rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  border-color: var(--sl-color-accent);
+  box-shadow: 0 0 0 1px var(--sl-color-accent);
+}
+
+/* ── Sidebar ─────────────────────────────────────────────────────────────────── */
+.sidebar-pane {
+  border-inline-end: 1px solid var(--sl-color-hairline);
+}
+
+/* ── Code blocks — slightly rounded like pocketbase.io ──────────────────────── */
+.expressive-code .frame {
+  border-radius: 0.6rem !important;
+}
+
+/* ── Inline code ─────────────────────────────────────────────────────────────── */
+:not(pre) > code {
+  background: var(--sl-color-accent-low);
+  color: var(--sl-color-accent-high);
+  padding: 0.15em 0.4em;
+  border-radius: 0.3em;
+  font-size: 0.88em;
+}
+
+/* ── Aside / callout accent ──────────────────────────────────────────────────── */
+.starlight-aside--note {
+  --sl-color-asides-border: var(--sl-color-accent);
+}
+
+/* ── "On this page" heading ──────────────────────────────────────────────────── */
+.right-sidebar-panel h2 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--sl-color-gray-3);
+}
+
+/* ── Badge component ─────────────────────────────────────────────────────────── */
+.sl-badge {
+  border-radius: 999px;
+}
