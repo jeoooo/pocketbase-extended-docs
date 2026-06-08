@@ -24,7 +24,7 @@ pb.setTimeout(5000);   // 5 s — for fast local networks
 pb.setTimeout(30000);  // 30 s — for slow or congested connections
 ```
 
-When the timeout is reached without a response, `_request()` returns a `PBResponse` with `ok = false` and `statusCode = 0`.
+When the timeout is reached without a response, the library returns a `PBResponse` with `ok = false` and `statusCode = 0`.
 
 ---
 

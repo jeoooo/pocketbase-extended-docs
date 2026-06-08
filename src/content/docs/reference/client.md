@@ -48,7 +48,7 @@ pb.collection("notes").getOne("RECORD_ID");
 pb.collection("users").authWithPassword("email@example.com", "password");
 ```
 
-The selector must be called before every record or auth operation. It does not carry over between calls.
+The `_collection` member persists between calls — if you call `.collection("notes")` and then call a method without chaining, it will target `notes`. Always call `.collection()` explicitly before each operation to prevent accidentally targeting the wrong collection.
 
 ---
 

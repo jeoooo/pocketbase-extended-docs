@@ -19,6 +19,7 @@ export default defineConfig({
 						{ label: 'Introduction', slug: 'getting-started/introduction' },
 						{ label: 'Installation', slug: 'getting-started/installation' },
 						{ label: 'Quick Start', slug: 'getting-started/quick-start' },
+						{ label: 'Migration from v0.x', slug: 'getting-started/migration' },
 					],
 				},
 				{

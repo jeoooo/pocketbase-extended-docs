@@ -3,11 +3,16 @@ title: Installation
 description: How to install PocketbaseExtended in the Arduino IDE or PlatformIO.
 ---
 
-## Arduino IDE
+## Arduino IDE — Library Manager (recommended)
+
+1. Open **Sketch → Include Library → Manage Libraries…**
+2. Search for `PocketbaseExtended` and click **Install**.
+
+## Arduino IDE — Manual
 
 1. Download or clone the [PocketbaseExtended repository](https://github.com/jeoooo/PocketbaseExtended).
-2. In the Arduino IDE go to **Sketch → Include Library → Add .ZIP Library…** and select the downloaded ZIP, **or** copy the folder directly into your Arduino `libraries/` directory.
-3. Restart the IDE. The library now appears under **Sketch → Include Library → PocketbaseExtended**.
+2. Go to **Sketch → Include Library → Add .ZIP Library…** and select the downloaded ZIP, **or** copy the folder directly into your Arduino `libraries/` directory.
+3. Restart the IDE. The library appears under **Sketch → Include Library → PocketbaseExtended**.
 
 ## PlatformIO
 

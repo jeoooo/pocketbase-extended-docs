@@ -7,6 +7,10 @@ import { Aside } from '@astrojs/starlight/components';
 
 All record methods require a collection to be selected first via [`.collection()`](/reference/client/). Every `Ex` method returns a [`PBResponse`](/reference/pb-response/); the convenience variants return only the raw body `String`.
 
+<Aside type="note">
+  Methods that require a `recordId` (`getOneEx`, `updateEx`, `deleteRecordEx`) validate it before making any HTTP request. Passing `nullptr` or an empty string returns a `PBResponse` with `ok = false`, `statusCode = 0`, and `error = "recordId is required"`.
+</Aside>
+
 ## Extended methods
 
 ### `getOneEx()`

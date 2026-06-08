@@ -3,6 +3,8 @@ title: Health & Files
 description: API reference for the health check probe and file URL builder.
 ---
 
+import { Aside } from '@astrojs/starlight/components';
+
 ## `checkHealth()`
 
 Probe the PocketBase health endpoint to verify the server is reachable and running.
@@ -50,6 +52,10 @@ void setup() {
 
 Build the full URL for a file attached to a record. **No HTTP request is made** — this is a pure string-construction helper.
 
+<Aside type="caution">
+  `getFileUrl()` uses the collection set by `.collection()`. Always call `.collection("your_collection")` before calling this method, or the URL will contain the wrong collection segment.
+</Aside>
+
 ```cpp
 String getFileUrl(
     const char* recordId,
@@ -90,4 +96,4 @@ String tall = pb.getFileUrl("RECORD_ID", "banner.png", "0x200");
 // https://my-pb.com/api/files/avatars/RECORD_ID/banner.png?thumb=0x200
 ```
 
-The active collection set via `.collection()` is used as the collection segment of the URL, so call `.collection()` before `getFileUrl()` if the collection has not already been set.
+The active collection set via `.collection()` is used as the collection segment of the URL.
