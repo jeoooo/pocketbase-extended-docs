@@ -14,6 +14,9 @@ export default defineConfig({
               { icon: 'github', label: 'GitHub', href: 'https://github.com/jeoooo/PocketbaseExtended' },
           ],
           customCss: ['./src/styles/custom.css'],
+          components: {
+              Search: './src/components/Search.astro',
+          },
           sidebar: [
               {
                   label: 'Getting Started',
@@ -42,6 +45,13 @@ export default defineConfig({
                       { label: 'Configuration', slug: 'reference/configuration' },
                       { label: 'Health & Files', slug: 'reference/health-files' },
                       { label: 'PBResponse', slug: 'reference/pb-response' },
+                  ],
+              },
+              {
+                  label: 'AI',
+                  items: [
+                      { label: 'Using These Docs with AI', slug: 'ai/using-with-ai' },
+                      { label: 'llms.txt', link: '/llms.txt' },
                   ],
               },
           ],
