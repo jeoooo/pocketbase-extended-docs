@@ -1,11 +1,14 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import starlightPageActions from 'starlight-page-actions';
 
 import cloudflare from '@astrojs/cloudflare';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://pocketbase-extended-docs.pages.dev', // PLACEHOLDER — replace with the real deployed URL
+
   integrations: [
       starlight({
           title: 'PocketbaseExtended',
@@ -14,6 +17,19 @@ export default defineConfig({
               { icon: 'github', label: 'GitHub', href: 'https://github.com/jeoooo/PocketbaseExtended' },
           ],
           customCss: ['./src/styles/custom.css'],
+          components: {
+              Search: './src/components/Search.astro',
+          },
+          plugins: [
+              starlightPageActions({
+                  baseUrl: 'https://pocketbase-extended-docs.pages.dev', // PLACEHOLDER — replace with the real deployed URL
+                  actions: {
+                      markdown: true,
+                      chatgpt: false,
+                      claude: false,
+                  },
+              }),
+          ],
           sidebar: [
               {
                   label: 'Getting Started',
@@ -42,6 +58,13 @@ export default defineConfig({
                       { label: 'Configuration', slug: 'reference/configuration' },
                       { label: 'Health & Files', slug: 'reference/health-files' },
                       { label: 'PBResponse', slug: 'reference/pb-response' },
+                  ],
+              },
+              {
+                  label: 'AI',
+                  items: [
+                      { label: 'Using These Docs with AI', slug: 'ai/using-with-ai' },
+                      { label: 'llms.txt', link: '/llms.txt' },
                   ],
               },
           ],
